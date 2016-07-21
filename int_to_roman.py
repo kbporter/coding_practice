@@ -1,4 +1,5 @@
 def int_to_roman(myint):
+    """ takes integer input, and transforms to roman numerals up to 3999 """
     magnitudes = [1000, 100, 10, 1]
     num2roman = {'1000': 'M', '500': 'D', '100':'C', '50':'L', '10': 'X', '5':'V', '1':'I'}
     curchar = str()
