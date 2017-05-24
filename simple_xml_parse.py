@@ -1,13 +1,17 @@
-import xml.etree.ElementTree as ET
-tree = ET.parse('countrytest.xml')
-root = tree.getroot()
 import csv
+import xml.etree.ElementTree as ET
 
-file_data = open('countrytest.csv', 'w') #, encoding='utf8'
+inputfile = 'countrytest.xml'
+outputfile = 'countrytest.csv'
+
+tree = ET.parse(inputfile)
+root = tree.getroot()
+
+
+file_data = open(outputfile, 'w') #, encoding='utf8'
 csvwriter = csv.writer(file_data)
 
 level0 = 0
-# level2 = 0
 while level0 < len(root):
     header = []
     content = []
@@ -26,7 +30,7 @@ while level0 < len(root):
     
     if level0 == 0 & level1 ==0:
         csvwriter.writerow(header)
-    
+        
     csvwriter.writerow(content)
 
     level0 += 1
